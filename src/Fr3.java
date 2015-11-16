@@ -6,19 +6,19 @@ import java.util.Scanner;
 
 public class Fr3 {
     public static void main(String args[]) {
-        Scanner kboard = new Scanner(System.in);
-        int n = kboard.nextInt();
+
         int p = 2;
-        if (n > p) {
-
-        }
-
-        int counter = 1;
-        double sum = 1;
-        while (counter <= n) {
-            sum = sum * counter;
-            counter = counter + 1;
-            System.out.println(sum);
+        int fac = 1;
+        int counter = 0;
+        while (counter < 5) {
+            if ((fac + 1) % p == 0) {
+                counter++;
+                System.out.println(fac);
+            }
+            fac = fac * p;
+            System.out.println(fac);
+            p++;
+            System.out.println(p);
         }
     }
 }
