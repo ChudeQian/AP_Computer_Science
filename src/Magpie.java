@@ -31,22 +31,22 @@ public class Magpie {
         String response = "";
         int youPsn = findKeyword(statement, "you", 0);
         int iPsn = findKeyword(statement, "I", 0);
-        if (statement.indexOf("no ") >= 0) {
+        if (findKeyword(statement, "no") >= 0) {
             response = "Why so negative?";
-        } else if (statement.equals("")) {
+        } else if (statement.length() == 0) {
             response = "Say Something!!!";
-        } else if (statement.indexOf("mother ") >= 0
-                || statement.indexOf("father ") >= 0
-                || statement.indexOf("sister ") >= 0
-                || statement.indexOf("brother ") >= 0) {
+        } else if ((findKeyword(statement, "mother")) >= 0
+                || (findKeyword(statement, "father")) >= 0
+                || (findKeyword(statement, "sister")) >= 0
+                || (findKeyword(statement, "brother")) >= 0) {
             response = "Tell me more about your family.";
-        } else if (statement.indexOf("dog ") >= 0 || statement.indexOf("cat ") >= 0 || statement.indexOf("fish ") >= 0) {
+        } else if ((findKeyword(statement, "dog")) >= 0 || (findKeyword(statement, "cat")) >= 0 || (findKeyword(statement, "fish")) >= 0) {
             response = "Tell me more about your pets. ";
-        } else if (statement.indexOf("Mr. ") >= 0 || statement.indexOf("Ms. ") >= 0 || statement.indexOf("Mrs. ") >= 0) {
+        } else if ((findKeyword(statement, "Mr.")) >= 0 || (findKeyword(statement, "Ms.")) >= 0 || (findKeyword(statement, "Mrs.")) >= 0) {
             response = "Is he a good teacher?";
-        } else if (statement.indexOf("Frank ") >= 0) {
+        } else if ((findKeyword(statement, "Frank")) >= 0) {
             response = "He is cooler than Mr. D.";
-        } else if (statement.indexOf("Avon ") >= 0) {
+        } else if ((findKeyword(statement, "Avon")) >= 0) {
             response = "This is a good school!";
         } else if (findKeyword(statement, "I want to", 0) >= 0) {
             response = transformIWantToStatement(statement);
