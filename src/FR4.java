@@ -5,11 +5,24 @@ import java.util.Scanner;
  */
 public class FR4 {
     public static void main(String args[]) {
-        System.out.println("Mr. D is going to hate me if he runs this. LOL");
-        System.out.println("请输入你要检测的单词： ");
-        Scanner 键盘识别器 = new Scanner(System.in);
-        String 用户输入 = 键盘识别器.nextLine();
-
+        System.out.println("Please give your input");
+        Scanner kboard = new Scanner(System.in);
+        String userInput = kboard.nextLine();
+        System.out.println("This word is Palindorme: " + isPalindorme(userInput));
     }
 
-    public }
+    public static boolean isPalindorme(String word) {
+        int wordLength = word.length();
+        int counter = 0;
+        String newString = "";
+        while (counter < wordLength) {
+            newString += word.charAt(wordLength - 1 - counter);
+            counter++;
+        }
+        if (newString.equals(word)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
