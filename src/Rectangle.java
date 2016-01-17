@@ -38,11 +38,26 @@ public class Rectangle {
         } else return false;
     }
 
+    public boolean isSquare(int height, int width) {
+        if (height == width) {
+            return true;
+        } else return false;
+    }
+
+
     public void quadratize() {
         int size = this.height * this.width;
         int newSide = (int) Math.sqrt(size);
         this.width = newSide;
         this.height = newSide;
+        return;
+    }
+
+    public void quadratize(int height, int width) {
+        int size = height * width;
+        int newSide = (int) Math.sqrt(size);
+        width = newSide;
+        height = newSide;
         return;
     }
 
