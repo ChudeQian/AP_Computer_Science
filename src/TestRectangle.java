@@ -1,3 +1,5 @@
+import java.lang.reflect.Field;
+
 /**
  * Created by Qian on 1/16/2016.
  */
@@ -17,6 +19,17 @@ public class TestRectangle {
         r4.quadratize();
         System.out.println(r4.isSquare());
         System.out.println(r4.toString());
+
+
+        try {
+            Field field = Rectangle.class.getDeclaredField("width");
+            field.setAccessible(true);
+            System.out.println("FR is: " + field.getInt(r3));
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
     }
 }
