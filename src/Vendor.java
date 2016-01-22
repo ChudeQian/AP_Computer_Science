@@ -3,10 +3,11 @@
  * of items. A vendor carries out sales transactions. test
  */
 public class Vendor {
+    private static double totalSales;
     // Fields:
     private int deposited;
-    private int localStock;
-    private int singlePrice;
+    private int stock;
+    private int price;
     private int change;
 
     /**
@@ -16,10 +17,25 @@ public class Vendor {
      * @param stock number of items to place in stock (int)
      */
     public Vendor(int price, int stock) {
-        singlePrice = price;
-        localStock = stock;
-        deposited =0;
-        change=0;
+        this.price = price;
+        this.stock = stock;
+    }
+
+    public static double getTotalSales() {
+        double sales = totalSales;
+        totalSales = 0;
+        return sales;
+    }
+
+    /**
+     * Returns the number of items currently in stock.
+     *
+     * @return number of items currently in stock (int)
+     */
+    public int getStock()
+
+    {
+        return this.stock;
     }
 
     /**
@@ -28,16 +44,7 @@ public class Vendor {
      * @param qty number of items to place in stock (int)
      */
     public void setStock(int qty) {
-    }
-
-    /**
-     * Returns the number of items currently in stock.
-     * @return number of items currently in stock (int)
-     */
-    public int getStock()
-
-    {
-        return 0;
+        this.stock = qty;
     }
 
     /**
@@ -47,17 +54,18 @@ public class Vendor {
      * @param number of cents to add to the deposit (int)
      */
     public void addMoney(int number) {
-        deposited = deposited+number;
+        deposited += number;
     }
 
     /**
      * Returns the currently deposited amount (in cents).
+     *
      * @return number of cents in the current deposit (int)
      */
     public int getDeposit()
 
     {
-        return 0;
+        return deposited;
     }
 
     /**
@@ -71,21 +79,34 @@ public class Vendor {
      * @return true for a successful sale, false otherwise (boolean)
      */
     public boolean makeSale() {
-        if (localStock > 0) {
-            if (deposited >singlePrice){
-                return true;
-            }else  return false;
-        } else return false;
+        if (stock > 0 && deposited >= price) {
+            change = deposited - price;
+            stock -= 1;
+            System.out.println("The stock is:" + stock);
+
+            deposited = 0;
+            totalSales += price / 100.0;
+            System.out.println();
+            return true;
+        } else {
+            change = deposited;
+            deposited = 0;
+            return false;
+        }
     }
 
     /**
      * Returns and zeroes out the amount of change (from
      * the last sale or refund).
+     *
      * @return number of cents in the current change (int)
      */
     public int getChange()
 
     {
-        return 0;
+        int temp = change;
+        change = 0;
+        return temp;
     }
+
 }
