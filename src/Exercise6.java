@@ -12,7 +12,7 @@ public class Exercise6 {
         }
         System.out.println("Before: " + tester.toString());
         ArrayList<Integer> sorted = sorting(tester);
-        System.out.println("Before: " + sorted);
+        System.out.println("End: " + sorted);
 
     }
 
