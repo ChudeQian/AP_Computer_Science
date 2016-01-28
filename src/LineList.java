@@ -41,12 +41,13 @@ public class LineList {
     }
 
     public void shuffle() {
-        int n = stringList.size();
+        int n = stringList.size() - 1;
         while (n >= 2) {
-            int randomN = (int) (Math.random() * n);
+            int randomN = (int) ((Math.random() * n));
             String local = stringList.get(randomN);
+            stringList.set(randomN, stringList.get(n));
             stringList.set(n, local);
-            n--;
+            n = n - 1;
         }
 
     }
