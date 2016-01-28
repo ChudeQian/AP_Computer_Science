@@ -1,3 +1,4 @@
+import java.net.Inet4Address;
 import java.util.ArrayList;
 
 /**
@@ -5,9 +6,9 @@ import java.util.ArrayList;
  */
 public class ArrayListExample {
     public static void main(String args[]) {
-        ArrayList<Integer> myNums = new ArrayList<Integer>();
+        ArrayList<Integer> myNums = new ArrayList<>();
         for (int i = 0; i < 8; i++) {
-            myNums.set(i, i);
+            myNums.add(i);
         }
         System.out.println("The original array has size: " + myNums.size());
         System.out.println(myNums.toString());
@@ -46,7 +47,7 @@ public class ArrayListExample {
 
         int loaction =1;
         int value = 100;
-        myNums = insertArrayList(myNums,loaction,value);
+        myNums.add(loaction,value);
         System.out.println("The array after adding item in the middle has size: "+myNums.size());
         System.out.println(myNums.toString());
 
@@ -55,7 +56,7 @@ public class ArrayListExample {
         System.out.println(myNums.toString());
 
         loaction = 1;
-        value = deleteArrayList(myNums,loaction);
+        myNums.remove(loaction);
         System.out.println("With an inner item deleted the array has size: "+myNums.size());
         System.out.println(myNums.toString());
 
@@ -64,8 +65,10 @@ public class ArrayListExample {
         myNums.set(loaction,value);
         System.out.println("With an inner item changed the array has size: "+myNums.size());
         System.out.println(myNums.toString());
+        System.out.println();
 
     }
+
 
 }
 
