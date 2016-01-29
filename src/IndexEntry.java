@@ -20,7 +20,7 @@ public class IndexEntry {
     }
 
     public String toString() {
-
+        return this.word + " " + numsList.toString();
     }
 
 }
