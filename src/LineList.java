@@ -23,20 +23,12 @@ public class LineList {
     }
 
     public String remove(int k) {
-        String localTemp = stringList.get(k);
-        stringList.remove(stringList.get(k));
-        return localTemp;
+        return stringList.remove(k);
     }
 
     public void move(int index, int newIndex) {
-        String localTemp = stringList.get(index);
-        if (index < newIndex) {
-            stringList.add(newIndex, localTemp);
-            stringList.remove(index);
-        } else {
-            stringList.add(newIndex, localTemp);
-            stringList.remove(index - 1);
-        }
+        String localTemp = stringList.remove(index);
+        stringList.add(newIndex,localTemp);
 
     }
 
