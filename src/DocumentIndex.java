@@ -5,14 +5,14 @@ import java.util.ArrayList;
  */
 public class DocumentIndex extends ArrayList<IndexEntry> {
     public DocumentIndex() {
-        ArrayList<Integer> numList = new ArrayList<>();
+        super();
     }
 
     public DocumentIndex(int Number) {
-        ArrayList<Integer> numList = new ArrayList<>(Number);
+        super(Number);
     }
 
     public void addWord(String str, int num) {
-
+        str = str.toUpperCase();
     }
 }

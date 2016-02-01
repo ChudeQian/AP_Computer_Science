@@ -28,7 +28,7 @@ public class LineList {
 
     public void move(int index, int newIndex) {
         String localTemp = stringList.remove(index);
-        stringList.add(newIndex,localTemp);
+        stringList.add(newIndex, localTemp);
 
     }
 
