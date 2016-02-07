@@ -20,7 +20,7 @@ public class DocumentIndex extends ArrayList<IndexEntry> {
     public void addAllWords(String str, int num) {
         String[] words = str.split("\\W+");
         for (String word : words) {
-            if (word.length() < 0) {
+            if (word.length() > 0) {
                 addWord(word, num);
             }
         }

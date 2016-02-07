@@ -13,7 +13,7 @@ public class IndexEntry {
     }
 
     public void add(int num) {
-        if (numsList.contains(num) == false) {
+        if (!numsList.contains(num)) {
             numsList.add(num);
         }
     }
