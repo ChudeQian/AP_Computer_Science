@@ -13,7 +13,7 @@ public class IndexEntry {
     }
 
     public void add(int num) {
-        if (!numsList.contains(num)) {
+        if (numsList.contains(num) == false) {
             numsList.add(num);
         }
     }
@@ -23,16 +23,7 @@ public class IndexEntry {
     }
 
     public String toString() {
-        String result = "";
-        if (numsList.size() == 0) {
-            return word;
-        }
-        result += word + " ";
-        for (int i = 0; i < numsList.size() - 1; i++) {
-            result += numsList.get(i) + ", ";
-        }
-        result += numsList.get(numsList.size() - 1);
-        return result;
+        return (word + numsList);
     }
 
 }
