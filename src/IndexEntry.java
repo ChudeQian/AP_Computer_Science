@@ -23,7 +23,12 @@ public class IndexEntry {
     }
 
     public String toString() {
-        return (word + numsList);
+        String newNumList = " ";
+
+        for (int i = 0; i < numsList.size(); i++) {
+            newNumList += numsList.get(i) + ", ";
+        }
+        return (word + newNumList);
     }
 
 }
