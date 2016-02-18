@@ -10,7 +10,6 @@ public class Diploma {
     }
 
     public String toString() {
-        return "This certifies that " + this.name + "\n" +
-                "has completed a course in " + this.subject;
+        return "This certifies that " + this.name + "\n" + "has completed a course in " + this.subject;
     }
 }
