@@ -10,14 +10,14 @@ public class SortedWordList extends java.util.ArrayList<String> {
         super(capacity);
     }
 
-    public int indexOf(String w) {
+    public int indexOf(String word) {
         int left = 0;
         int right = super.size() - 1;
         while (left <= right) {
             int middle = (left + right) / 2;
-            if (w.equalsIgnoreCase(super.get(middle)))
+            if (word.equalsIgnoreCase(super.get(middle)))
                 return middle;
-            else if (w.compareToIgnoreCase(super.get(middle)) < 0)
+            else if (word.compareToIgnoreCase(super.get(middle)) < 0)
                 right = middle - 1;
             else
                 left = middle + 1;
