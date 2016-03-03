@@ -16,4 +16,5 @@ public class Chapter14QuadraticFunctionValueComparator {
     public int compare(Chapter14QuadraticFunction o1, Chapter14QuadraticFunction o2) {
         return (int) (o1.valueAt(x) - o2.valueAt(x));
     }
+
 }
